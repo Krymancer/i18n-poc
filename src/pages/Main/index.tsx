@@ -21,7 +21,11 @@ const Main: React.FC = () => {
     <>
       <div className="header">
         <h1>Internationalization</h1>
-        <select className="language-selector" onChange={handleLanguage}>
+        <select
+          className="language-selector"
+          defaultValue="pt"
+          onChange={handleLanguage}
+        >
           <option value="de">Deutsche</option>
           <option value="en">English</option>
           <option value="es">Español</option>
@@ -34,11 +38,29 @@ const Main: React.FC = () => {
         <div className="content">
           <h1>{t('language')}</h1>
 
+          <div className="components-container">
+            <input placeholder={t('language')}></input>
+          </div>
+
           <div className="buttons-container">
-            <button className="ok">
+            <button
+              className="ok"
+              onClick={() => {
+                alert(
+                  t('alert') +
+                    ': ' +
+                    t('buttons.ok', { ns: namespaces.common }),
+                );
+              }}
+            >
               {t('buttons.ok', { ns: namespaces.common })}
             </button>
-            <button className="cancel">
+            <button
+              className="cancel"
+              onClick={() => {
+                alert(t('buttons.cancel', { ns: namespaces.common }));
+              }}
+            >
               {t('buttons.cancel', { ns: namespaces.common })}
             </button>
           </div>

@@ -46,17 +46,39 @@
 button {
   border: none;
   height: 4em;
-  width: 5em;
+  width: 6em;
 
   font-size: 1.5em;
 
   color: white;
 }
 
-.ok {
+.cancel {
   background-color: #e4572e;
 }
 
-.cancel {
+.ok {
   background-color: #76b041;
+}
+
+.components-container {
+  display: flex;
+  margin: 2em;
+}
+
+input {
+  border: none;
+  height: 2em;
+  width: 5em;
+
+  font-size: 1.5em;
+
+  border-bottom: 2px solid;
+  margin-bottom: -1px;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+input:focus {
+  outline: none;
+  border-color: rgba(0, 0, 0, 1);
 }
