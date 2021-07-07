@@ -1,4 +1,5 @@
 {
     "language": "language",
-    "alert": "Inserted text"
+    "alert": "Inserted text",
+    "header-description": "texto random"
 }

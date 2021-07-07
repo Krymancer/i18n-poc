@@ -5,6 +5,11 @@ import { namespaces } from '../../internationalization/constants';
 
 import './index.css';
 
+import Card from '../../components/Card';
+import Card2 from '../../components/Card2';
+
+import food from '../../assets/food.png';
+
 const Main: React.FC = () => {
   const { t, i18n } = useTranslation(namespaces.pages.main);
 
@@ -21,6 +26,7 @@ const Main: React.FC = () => {
     <>
       <div className="header">
         <h1>Internationalization</h1>
+        <p>{t('header-description')}</p>
         <select
           className="language-selector"
           defaultValue="pt"
@@ -35,6 +41,16 @@ const Main: React.FC = () => {
       </div>
 
       <div className="container">
+        <Card
+          author="Me"
+          date="01/01/2021"
+          image={food}
+          likeCount={10}
+          liked={true}
+          title={t('language')}
+        ></Card>
+
+        <Card2 />
         <div className="content">
           <h1>{t('language')}</h1>
 

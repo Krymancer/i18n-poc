@@ -2,6 +2,7 @@ export const namespaces = {
   pages: {
     main: 'pages.main',
   },
+  components: 'components',
   common: 'common',
 };
 
