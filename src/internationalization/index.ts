@@ -1,23 +1,26 @@
 import i18next, { i18n as i18nInstance } from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { languages, namespaces } from './constants';
-import HttpApi from 'i18next-http-backend';
+import { namespaces } from './constants';
+
+import languages from '../translations';
 
 const createI18n = (language: string): i18nInstance => {
   const i18n = i18next.createInstance().use(initReactI18next);
 
-  i18n.use(HttpApi).init({
-    backend: {
-      loadPath: './locales/{{lng}}/{{ns}}.json',
+  i18n.init({
+    debug: true,
+    interpolation: {
+      escapeValue: false, // not needed for react as it escapes by default
     },
+    resources: languages,
     lng: language,
-    fallbackLng: language,
     ns: namespaces.common,
+    fallbackLng: language,
   });
 
   return i18n;
 };
 
-const i18n = createI18n(languages.pt);
+const i18n = createI18n('pt');
 
 export default i18n;
