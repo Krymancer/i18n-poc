@@ -4,9 +4,6 @@ export const namespaces = {
 };
 
 export const languages = {
-  de: 'de',
   en: 'en',
-  es: 'es',
   pt: 'pt',
-  ru: 'ru',
 };
